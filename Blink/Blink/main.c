@@ -4,13 +4,13 @@
 
 int main(void)
 {
-	//ustawiamy ca³y port D jako wyjœcia
+	//ustawiamy caÂ³y port D jako wyjÅ“cia
 	DDRD = 0xFF; //11111111
     while (1) 
     {
-		PIND = _BV(PD0); //Zapalamy bit PD0 w rejestrze PIND
+		PORTD = _BV(PD0); //Zapalamy bit PD0 w rejestrze PIND
 		_delay_ms(1000); //Czekamy 1s
-		PIND = ~_BV(PD0); //Gasimy bit PD0 w rejestrze PIND
+		PORTD = ~_BV(PD0); //Gasimy bit PD0 w rejestrze PIND
 		_delay_ms(1000);
     }
 }

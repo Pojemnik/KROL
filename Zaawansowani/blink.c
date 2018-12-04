@@ -13,3 +13,4 @@ int main(void)
 		PORTD = ~_BV(PD0); //Gasimy bit PD0 w rejestrze PIND
 		_delay_ms(1000);
     }
+}

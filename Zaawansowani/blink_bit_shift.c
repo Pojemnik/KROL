@@ -7,7 +7,6 @@ LEDy pod³¹czone do pinów PD7-5
 KRÓL 2018
 */
 
-
 int main(void)
 {
 	//wszystkie piny portu D na wyjœcia

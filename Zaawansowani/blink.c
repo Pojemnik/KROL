@@ -1,10 +1,16 @@
-#include <avr/io.h>
+﻿#include <avr/io.h>
 #include <util/delay.h>
+
+/*
+blink.c
+LED podłączony do pinu PD0
+KRÓL 2018
+*/
 
 
 int main(void)
 {
-	//ustawiamy ca³y port D jako wyjœcia
+	//ustawiamy cały port D jako wyjœcia
 	DDRD = 0xFF; //11111111
     while (1) 
     {

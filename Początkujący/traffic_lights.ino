@@ -1,3 +1,10 @@
+/*
+traffic_lights.ino
+LEDy na pinach 6,7,8
+Przycisk na pinie 5
+KRÓL 2018
+*/
+
 void setup() {
   pinMode(5,INPUT);     //Przycisk
   pinMode(6,OUTPUT);    //led zielony

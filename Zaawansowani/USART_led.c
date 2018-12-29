@@ -3,28 +3,28 @@
 
 /*
 USART_led.c
-LEDy pod≥πczone do pinÛw PD5-7
+LEDy pod≈ÇƒÖczone do pin√≥w PD5-7
 Przycisk na pinie PD4
-KR”L 2018
+KR√ìL 2018
 */
 
 
 int main(void)
 {
-	//wszystkie piny portu D oprÛcz PD4 na wyjúcia
+	//wszystkie piny portu D opr√≥cz PD4 na wyj≈õcia
 	DDRD = 0b11101111;
-	UCSR0B = _BV(RXEN0) | _BV(TXEN0);		// W≥πczamy odbiornik i nadajnik
-	UBRR0L = 103;							// Baud rate (wartoúÊ z datasheetu)
+	UCSR0B = _BV(RXEN0) | _BV(TXEN0);		// W≈ÇƒÖczamy odbiornik i nadajnik
+	UBRR0L = 103;							// Baud rate (warto≈õƒá z datasheetu)
 	PORTD = 0;
     while (1) 
     {
-		if(UCSR0A & _BV(RXC0))				// Gdy coú odbierzemy
+		if(UCSR0A & _BV(RXC0))				// Gdy co≈õ odbierzemy
 		{
 			char x = UDR0;
 			switch(x)
 			{
 				case '1':
-				PIND |= _BV(PD7);			// Zapis do rejestru PINx zmienia stan wyjúcia na przeciwny
+				PIND |= _BV(PD7);			// Zapis do rejestru PINx zmienia stan wyj≈õcia na przeciwny
 				break;
 				case '2':
 				PIND |= _BV(PD6);
@@ -34,12 +34,12 @@ int main(void)
 				break;
 			}
 			while(!(UCSR0A & _BV(UDRE0)));
-			UDR0 = x;						// Odeúlij to, co dosta≥eú
+			UDR0 = x;						// Ode≈õlij to, co dosta≈Çe≈õ
 		}
-		if(!(PIND & _BV(PD4)))				// Gdy coú odbierzemy
+		if(!(PIND & _BV(PD4)))				// Gdy guzik jest wci≈õniƒôty
 		{
 			while(!(UCSR0A & _BV(UDRE0)));
-			UDR0 = '1';						// Wysy≥amy jedynke z pozdrowieniami
+			UDR0 = '1';						// Wysy≈Çamy jedynke z pozdrowieniami
 		}
     }
 }
